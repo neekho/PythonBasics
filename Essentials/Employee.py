@@ -12,6 +12,8 @@ class Employee:
 
     fire_all_employees = False
 
+    project = dict()
+
     #CONSTRUCTOR = TO JAVA
     def __init__(self, firstname, lastname, employee_num, pay):
         # Instances variables  are variables that are different from each instance.
@@ -53,6 +55,13 @@ class Employee:
     def fire_all(cls):
         cls.fire_all_employees = True
         cls.num_of_employees = 0
+
+    @classmethod
+    def assign_employee(cls, employee1, employee2):
+        cls.project['project-leader'] = employee1.firstname
+        cls.project['assistant'] = employee2.firstname
+        print(cls.project)
+
 
 
 # emp1 and emp2 are instances of the Employee class.
@@ -100,3 +109,5 @@ date_argument = datetime.date(2021, 11, 14)
 print(Employee.is_work_day(date_argument))
 
 print('-------------')
+
+
